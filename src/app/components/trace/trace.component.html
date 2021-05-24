@@ -1,22 +1,22 @@
-<div class="container mt-5 mb-5">
+
+<div class="container mt-5 mb-5" *ngIf='trace'>
 	<div class="row">
 		<div class="col-md-6 offset-md-3">
 			<h4>Ürün Geçmişi</h4>
 			<ul class="timeline">
 				<li>
-					<a target="_blank" href="https://www.totoprayogo.com/#">Ürün İzlenebilirliği Log 1 - </a>
-					<a href="#" class="float-right">21 March, 2014</a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
+					<a target="_blank">Tebrikler</a>
+					<p>Mükemmel bir {{ trace.productName }} aldınız! Peki bu lezzettin nereden geldiğini biliyor musunuz? </p>
 				</li>
 				<li>
-					<a href="#">Ürün İzlenebilirliği Log 2 - </a>
-					<a href="#" class="float-right">4 March, 2014</a>
-					<p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+					<p>Çikolata çekirdeğini {{ trace.chocoSource }}'nden alıp kendimiz işliyoruz.</p>
+					<p>Bunu yaparken, Ormansızlaştırma ve Çocuk işçi konularına dikkat ediyoruz.</p>
 				</li>
 				<li>
-					<a href="#">Ürün İzlenebilirliği Log 3 - </a>
-					<a href="#" class="float-right">1 April, 2014</a>
-					<p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+					<p>En kaliteli {{trace.nutOrigin}} yöresi mahsülü kullanılarak yapılan bu ürünün fındıkları,</p>
+					<p>{{trace.processDate}} tarihinde {{trace.processFactoryName}} tesislerimizde işlenmiş ve {{trace.packageFactorayName}} fabrikamızda {{trace.packageDate}} tarihinde bitmiş ürüne dönüşmüştür.</p>
+					<br/>
+					<a href="">Ürünün  hikayesi için videoyu tıklayınız… </a>
 				</li>
 			</ul>
 		</div>

@@ -1,0 +1,2 @@
+import {Trace} from './Trace'
+export const TRACE: Trace = {'productName': 'Ülker Çikolata','chocoSource': 'Kolombiya','nutOrigin': 'Giresun yöresi','processDate': '08.03.2021','processFactoryName': 'Önem Giresun','packageFactorayName': 'Topkapı','packageDate': '14.03.2021'}
