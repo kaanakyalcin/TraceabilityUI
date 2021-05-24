@@ -5,6 +5,7 @@ import { Product } from '../../Product';
 import { ProductService } from '../../services/product.service';
 import { TraceService } from '../../services/trace.service';
 import { Trace } from 'src/app/Trace';
+import { AlertifyService } from 'src/app/services/alertify.service';
 
 @Component({
   selector: 'app-product',
@@ -20,7 +21,10 @@ export class ProductComponent implements OnInit {
   lotId: string;
   expirationDate: Date;
 
-  constructor(private productService : ProductService, private activatedRoute : ActivatedRoute, private traceService : TraceService) { }
+  constructor(private productService : ProductService, 
+    private activatedRoute : ActivatedRoute, 
+    private traceService : TraceService,
+    private alertifyService: AlertifyService) { }
 
   ngOnInit(): void {
     
@@ -36,6 +40,7 @@ export class ProductComponent implements OnInit {
 
     if(lotId.length == 0 && expirationDate.toString().length == 0){
       //Lütfen LotId veya Son kullanma tarihi giriniz.;
+      this.alertifyService.warning("Lütfen LotId veya Son kullanma tarihi giriniz.");
       return;
     }
 
@@ -46,6 +51,8 @@ export class ProductComponent implements OnInit {
     console.log(this.expirationDate);
 
     this.traceService.getTrace(this.barcode, this.lotId, this.expirationDate).subscribe(res => (this.trace = res));
+
+    console.log(this.trace);
   }
 
 }
